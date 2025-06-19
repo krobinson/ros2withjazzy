@@ -7,6 +7,10 @@
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
+			"command1": "sudo add-apt-repository universe",
+			"command2": "sudo apt-get update"
+        },
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"enableNonRootDocker": "true",
@@ -16,8 +20,8 @@
 			"version": "3.12.4",
 			"installJupyterlab": "true"
 		},
-		"ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-			"packages": "postgresql-client, npm, pipx, x11-apps"
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"packages": "software-properties-common,postgresql-client,npm,pipx,x11-apps,ros-dev-tools,python3-colcon-common-extensions"
 		}
 	},
 	"customizations": {
@@ -36,4 +40,4 @@
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-}
+}  
